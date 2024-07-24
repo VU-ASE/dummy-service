@@ -2,7 +2,7 @@
 .PHONY: build start clean test
 
 BUILD_DIR=bin/
-BINARY_NAME=dummy
+BINARY_NAME=dummy-service
 
 build:
 	@echo "building ${BINARY_NAME}"

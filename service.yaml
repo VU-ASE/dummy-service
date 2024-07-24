@@ -1,6 +1,6 @@
 
 
-name: dummy
+name: dummy-service
 description: Just a dummy sensor
 
 dependencies: []
