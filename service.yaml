@@ -1,16 +1,24 @@
-# Service definition
-name: ChangeThisRepoName
-description: template-GoModule
 
-# No dependencies
+
+name: dummy
+description: Just a dummy sensor
+
 dependencies: []
 
-# No outputs (You'll probably want to update this or `dependencies`)
-outputs: []
+outputs:
+  - name: rpm
+    address: tcp://*:6969
 
-# Runtime options
 options:
-  - name: example_option
-    type: int     # Can be int, float, string, bool
-    mutable: true # Can be changed at runtime
-    default: 1    # Default value
+  - name: numSensors
+    type: int
+    mutable: false
+    default: 2
+  - name: dummyMin
+    type: int
+    mutable: true
+    default: 0
+  - name: dummyMax
+    type: int
+    mutable: true
+    default: 100
