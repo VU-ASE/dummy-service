@@ -86,8 +86,6 @@ func run(
 			}
 		}
 	}
-
-	return nil
 }
 
 func tuningCallback(newtuning *pb_systemmanager_messages.TuningState) {
