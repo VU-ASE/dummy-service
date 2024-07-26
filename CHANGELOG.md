@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/VU-ASE/dummy-service/compare/v1.0.0...v1.0.1) (2024-07-26)
+
+
+### Bug Fixes
+
+* upgrade to latest packages ([69ff85d](https://github.com/VU-ASE/dummy-service/commit/69ff85d02f32f63abfc3592e453c9da3d680deba))
+
 ## 1.0.0 (2024-07-25)
 
 
