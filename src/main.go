@@ -2,10 +2,11 @@ package main
 
 import (
 	"time"
+	"os"
 
-	pb_outputs "github.com/VU-ASE/pkg-CommunicationDefinitions/v2/packages/go/outputs"
-	pb_systemmanager_messages "github.com/VU-ASE/pkg-CommunicationDefinitions/v2/packages/go/systemmanager"
-	servicerunner "github.com/VU-ASE/pkg-ServiceRunner/v2/src"
+	servicerunner "github.com/VU-ASE/roverlib/src"
+	pb_outputs "github.com/VU-ASE/rovercom/packages/go/outputs"
+	pb_systemmanager_messages "github.com/VU-ASE/rovercom/packages/go/core"
 	zmq "github.com/pebbe/zmq4"
 	"github.com/rs/zerolog/log"
 	"google.golang.org/protobuf/proto"
@@ -94,6 +95,10 @@ func tuningCallback(newtuning *pb_systemmanager_messages.TuningState) {
 	tuning = newtuning
 }
 
+func onTerminate(signal os.Signal) {
+
+}
+
 func main() {
-	servicerunner.Run(run, tuningCallback, false)
+	servicerunner.Run(run, tuningCallback, onTerminate, false)
 }
