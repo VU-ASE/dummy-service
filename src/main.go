@@ -4,7 +4,7 @@ import (
 	"time"
 	"os"
 
-	servicerunner "github.com/VU-ASE/roverlib/src"
+	roverlib "github.com/VU-ASE/roverlib/src"
 	pb_outputs "github.com/VU-ASE/rovercom/packages/go/outputs"
 	pb_systemmanager_messages "github.com/VU-ASE/rovercom/packages/go/core"
 	zmq "github.com/pebbe/zmq4"
@@ -15,8 +15,8 @@ import (
 var tuning *pb_systemmanager_messages.TuningState
 
 func run(
-	serviceInfo servicerunner.ResolvedService,
-	sysMan servicerunner.SystemManagerInfo,
+	serviceInfo roverlib.ResolvedService,
+	sysMan roverlib.CoreInfo,
 	initialTuning *pb_systemmanager_messages.TuningState) error {
 	tuning = initialTuning
 
@@ -25,7 +25,7 @@ func run(
 		return err
 	}
 
-	numOutput, err := servicerunner.GetTuningInt("numSensors", tuning)
+	numOutput, err := roverlib.GetTuningInt("numSensors", tuning)
 	if err != nil {
 		return err
 	}
@@ -44,12 +44,12 @@ func run(
 	}
 
 	for {
-		dummyMin, err := servicerunner.GetTuningInt("dummyMin", tuning)
+		dummyMin, err := roverlib.GetTuningInt("dummyMin", tuning)
 		if err != nil {
 			return err
 		}
 
-		dummyMax, err := servicerunner.GetTuningInt("dummyMax", tuning)
+		dummyMax, err := roverlib.GetTuningInt("dummyMax", tuning)
 		if err != nil {
 			return err
 		}
@@ -100,5 +100,5 @@ func onTerminate(signal os.Signal) {
 }
 
 func main() {
-	servicerunner.Run(run, tuningCallback, onTerminate, false)
+	roverlib.Run(run, tuningCallback, onTerminate, false)
 }
