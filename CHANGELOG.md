@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/VU-ASE/dummy-service/compare/v1.0.1...v1.0.2) (2024-07-29)
+
+
+### Bug Fixes
+
+* rename CoreInfo ([b6d082f](https://github.com/VU-ASE/dummy-service/commit/b6d082f4453c2642a746ed8fd7f80c43251d310e))
+
 ## [1.0.1](https://github.com/VU-ASE/dummy-service/compare/v1.0.0...v1.0.1) (2024-07-26)
 
 
